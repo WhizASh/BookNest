@@ -44,7 +44,7 @@ def edit(request,pk):
 
             return redirect(f'/item/{item.id}' , pk=item.id)
     else:
-        form = EditItemForm(instance=Items)
+        form = EditItemForm(instance=item)
     return render(request,'item/form.html',{'form':form,'title':'Edit Item'})
 
 @login_required
@@ -52,4 +52,4 @@ def delete_item(request ,pk):
     item = get_object_or_404(Items,pk=pk, created_by=request.user)
     item.delete()
 
-    return redirect("/dashboard")
+    return redirect("/dashboard")   
