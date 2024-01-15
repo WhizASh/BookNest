@@ -1,0 +1,37 @@
+{% extends "main/base_nav.html" %}
+{% load static %}
+{% block title %}Browse{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static "browse.css" %}">
+{% endblock link %}
+
+{% block content %}
+
+<section class="books" id="books">
+    <div class="row"><!--Main row-->
+        <div class="" id="sidecol"><!--Main Col 1--><!--Change class is not col-->
+            <input type="text" placeholder="Search" id="search"><i class="fa-solid fa-magnifying-glass" id="searchicon"></i>
+            <div id="list" style="width:220px;background-color: #1f242d;color: #fff;"><!--List group div starts her-->
+                <ul>
+                    {% for cat in category %}
+                    <li><a href="#"><i class="fa-solid fa-folder-open"></i>{{cat.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div><!--List ends-->
+        </div><!--Col 1-->
+        <div class="col"><!--Main Col 2-->
+            <div class="row">
+                {% for item in item %}
+                <div class="col col-md-5 cardcols">
+                    <a href="/item/{{item.id}}"><img src="{{item.image.url}}" style="height:190px;width:258px;padding-left:-5px;"></a>
+                    <p><a href="/item/{{item.id}}">{{item.book_name}}</a></p>
+                    <p><a href="/item/{{item.id}}">{{item.price}}</a></p>
+                </div>
+                {% endfor %}
+            </div>
+        </div><!--Main Col 2 ends-->
+    </div><!--Main row ends-->
+</section>
+
+{% endblock content %}

@@ -1,0 +1,174 @@
+/*Navbar section CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Poppins:wght@300&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border:none;
+    outline:none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+:root{
+    --bg-color:#1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+html{
+    font-size: 62%;
+    overflow-x: hidden;
+}
+body{
+    background:#1f242d;
+    color:#fff;
+}
+header{
+    position:relative;/*change*/
+    top:1px;/*change*/
+    left:0;
+    margin-bottom: 25px;
+    height:80px;
+    width:100%;
+    padding: 3px 5%;/*change*/
+    padding-top: 2rem ;
+    background: #1f242d;
+    display: flex;
+    justify-content: space-between;
+    align-items: top; /*change*/
+    z-index: 100;
+}
+.logo{
+    position: relative;
+    top: 13px;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 400;
+    cursor: default;
+}
+
+
+.navbar a{
+    font-size: 1.8rem;
+    color: #fff;
+/*    margin: 3rem;*/
+    margin-top: .7rem; /*change*/
+    margin-bottom: 50px;
+    margin-right: 53px;
+    transition: .3s ;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: #0ef; 
+}
+a i{
+    position: relative;
+    top:-2px;
+    margin-right: 5px;
+    padding-bottom: 1rem;
+    line-height: 0.8;
+    font-size: 12px;
+}
+a #icon{
+    font-size: 15px;
+    top:-1px;
+}
+a.signbtn{
+    position: relative;
+    top: -3px;
+    left: 20px;
+    background: #0ef;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem #0ef;
+    font-size: 1.6rem;
+    color: black;
+    padding: 7px 2rem; /*change*/
+}
+a.signbtn:hover{
+    box-shadow: 0 0 3rem #0ef;
+    color: #1f242d;
+}
+/*Books section Css*/
+section #sidecol{
+    background-color: #1f242d;
+    color: #fff;
+    font-size: 1.5rem;
+    width:17%;
+}
+ul{
+    list-style-type: none;
+    margin-left: -5px;
+}
+ul li{
+    display: block;
+    padding:12px; 
+    align-items: center;
+    width: 180px;
+}
+ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color:#fff;
+    width: 160px;
+}
+ul li:hover, ul li:hover a{
+    background-color: rgb(66, 67, 68);
+    border-radius: 5px;
+    color:#0ef;
+}
+i{
+    margin-right: 3px;
+}
+#search{
+    color: #fff;
+    border-radius: 20px;
+    background-color: #3b3c3d;
+    opacity: 70%;
+    padding-left:32px;
+    width:180px;
+    height:40px;
+    margin-bottom: 5px;
+    margin-left:15px;
+}
+#search:hover{
+    box-shadow: 0 0 2rem #fff;
+}
+.col .row .cardcols{
+    height:250px;
+    width:260px;
+    background-color: #3e3f42;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+.col .row .cardcols:hover{
+    box-shadow: 0 0 2rem #fff;
+}
+img{
+    position: relative;
+    left: -8px;
+}
+p{
+    height:60px;
+    padding-top: 6px;
+    font-size: 1.5rem;
+}
+p a{
+    color:#fff;
+    display: block;
+    width:250px;
+    text-decoration: none;
+    line-height: 50px;
+}
+p a:hover{
+    color: #0ef;
+}
+#searchicon{
+    position: relative;
+    right:170px;
+    color: #9a9da0;
+}
+#searchicon:hover{
+    color: #0ef;
+}

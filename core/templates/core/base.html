@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    {% comment %} {% block link %}{% endblock link %} {% endcomment %}
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-400">
+
+        <a href="/" class="text-2xl font-semibold">BookNest</a>
+
+        <div class="space-x-6">
+           <a href="/item/new/" class="text-xl font-semibold">Add Item</a>
+           <a href="#" class="text-xl font-semibold">Profile</a>
+
+           {% if request.user.is_authenticated %}
+           <a href="#dashboard" class="py-3 px-5 bg-green-200 font-semibold text-lg hover:bg-green-600 rounded-xl">DashBoard</a>
+
+           <a href="#inbox" class="py-3 px-5 bg-sky-300 font-semibold rounded-xl text-lg hover:bg-sky-600">Inbox</a>
+           
+           <a href="/logout" class="py-3 px-6 bg-sky-300 font-semibold rounded-xl text-lg hover:bg-sky-600">Logout</a>
+
+           {% else %}
+
+           
+           <a href="/signup" class="py-3 px-5 bg-sky-300 font-semibold rounded-xl text-lg hover:bg-sky-600">Sign Up</a>
+           
+           <a href="/login" class="py-3 px-6 bg-sky-300 font-semibold rounded-xl text-lg hover:bg-sky-600">Login</a>
+
+           {% endif %}
+           
+        </div>
+    </nav>
+    <div class="px-6 py-6">
+        {% block content %}
+        
+        {% endblock content %}
+    </div>
+
+    <footer class="py-6 px-6 flex bg-sky-100">
+        <div class="w-2/3 ">
+            <h3 class="text-xl text-grey-500 font-semibold">About</h3>
+            <p class="text-sm text-grey-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit possimus libero odio quod sint, explicabo a quaerat fuga. Non nesciunt doloremque, eum magnam nihil blanditiis porro fugit. Expedita necessitatibus commodi incidunt suscipit? Qui, illum minus molestiae expedita saepe adipisci molestias provident dolore velit ad iusto odit assumenda nemo laborum inventore animi repellat iste. Similique.</p>
+        </div>
+        <ul class="space-y-2">
+            <li><a href="#" class="font-medium text-sm text-grey-300 hover:text-sky-500">About Us</a></li>
+            <li><a href="{% url "contact" %}" class="font-medium text-sm text-grey-300 hover:text-sky-500">Contact Us</a></li>
+            <li><a href="#" class="font-medium text-sm text-grey-300 hover:text-sky-500">Terms And Conditions</a></li>
+            <li><a href="admin/" class="font-medium text-sm text-grey-300 hover:text-sky-500">Admin (🤫🤫)</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

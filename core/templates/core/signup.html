@@ -1,0 +1,49 @@
+{% extends "core/base.html" %}
+
+{% block title %}SignUp - BookNest{% endblock title %}
+
+{% block content %}
+<div class = "w-1/2 my-6 p-6 mx-auto rounded-xl bg-sky-100">
+<h1 class="mb-10 text-3xl">Sign Up</h1>
+
+<form method="post">
+{% csrf_token %}
+
+
+<div class="mb-3">
+<label class="inline-block text-xl mb-2">Username</label><br>
+{{form.username }}
+</div>
+
+<div class="mb-3">
+<label class="inline-block mb-2 text-xl">Email</label><br>
+{{form.email }}
+</div>
+
+<div class="mb-3">
+<label class="inline-block mb-2 text-xl">password</label><br>
+{{form.password1 }}
+</div>
+
+<div class="mb-3">
+<label class="inline-block mb-2 text-xl">Repeat password</label><br>
+{{form.password2 }}
+</div>
+
+{% if form.non_filed_errors or form.errors %}
+<div class="p-6 bg-red-100 rounded-xl">
+    {% for field in form %}
+    {{field.errors}}
+    {% endfor %}
+
+    {{form.non_field_errors }}
+
+</div>
+{% endif %}
+
+<button class="py-4 px-8 mt-4 text-lg bg-teal-100 hover:bg-teal-700 rounded-xl ">Submit</button>
+
+</div>
+</form>
+
+{% endblock content %}

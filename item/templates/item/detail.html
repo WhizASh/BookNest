@@ -1,0 +1,42 @@
+{% extends "core/base.html" %} 
+
+{% block title %}{{item.book_name}}{% endblock title %}
+
+{% block content %}
+
+<div class="grid grid-cols-5 gap-5">
+    <div class="col-span-2">
+        <img src="{{item.image.url}}" alt="{{item.book_name}}" height="500" width="600" class="rounded">
+    </div>
+    <div class="col-span-3 gap-3 bg-sky-100 rounded-xl">
+        <h1 class="rounded font-semibold text-3xl px-3 py-3">{{item.book_name}}</h1>
+        <p class="text-semibold px-3 pt-3 ">Price: {{item.price}}</p>
+        <p class="text-semibold px-3 pt-3 ">Seller: {{item.created_by}}</p>
+        <p class="text-semibold px-3 py-5 ">{{item.description}}</p>
+
+        <a href="#" class="mt-8 ml-3 px-6 py-3 text-lg font-semibold bg-teal-500 text-white hover:bg-teal-700 rounded-xl">Contact Seller</a>
+    </div>
+</div>
+{% if related_items %}
+<div class="px-6 py-3 mt-12 grid grid-cols-6 gap-3 rounded-xl bg-sky-100 ">
+    <h1 class="font-semibold text-center">Related Items </h1>
+        {% for item in related_items %}
+        <div>
+            <a href="/item/{{item.id}}">
+                <div>
+                    <img src="{{item.image.url}}" alt="{{item.book_name}}" height="500" widht="500" class="rounded-t-xl">
+                </div>
+                <div class="p-6 bg-white rounded-b-xl">
+                    <h2 class="text-2xl">{{item.book_name}}</h2>
+                    <p class="text-grey-500">{{item.price}} Items</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+</div>
+{% endif %}
+    
+
+
+
+{% endblock content %}

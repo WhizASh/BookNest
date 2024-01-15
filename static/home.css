@@ -1,0 +1,119 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Poppins:wght@300&display=swap');
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border:none;
+    outline:none;
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --bg-color:#1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+html{
+    font-size: 62%;
+    overflow-x: hidden;
+}
+body{
+    background:#1f242d;
+    color:#fff;
+}
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 0rem 5%;
+    background: #1f242d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 600;
+    cursor: default;
+}
+.navbar a{
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 3rem;
+    transition: .3s ;
+    text-decoration: none;
+}
+.navbar a:hover, .navbar a.active{
+    color: #0ef; 
+}
+section{
+    min-height: 80vh;
+    padding: 5rem 5% 2rem;
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content h1{
+     font-size: 3.2rem;
+     font-weight: 700;
+     color:#0ef;
+}
+.home-content p{
+    font-size: 1.6rem;
+    padding-right: 150px;
+    line-height: 30px;
+} 
+.home-img img{
+    width: 400px;
+    height: 300px;
+    margin-right: 50px;
+}
+a i{
+    position: relative;
+    top:-2px;
+    margin-right: 5px;
+    padding-bottom: 1rem;
+    line-height: 0.8;
+    font-size: 12px;
+}
+a #icon{
+    font-size: 15px;
+    top:-1px;
+}
+a.signbtn{
+    background: #0ef;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem #0ef;
+    font-size: 1.6rem;
+    color: black;
+    padding: 1rem 2rem;
+}
+a.signbtn:hover{
+    box-shadow: 0 0 3rem #0ef;
+    color: #1f242d;
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: #0ef;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem #0ef;
+    font-size: 1.6rem;
+    color: #1f242d;
+    font-weight: 600;
+}
+.btn:hover{
+    box-shadow: 0 0 2rem #0ef;
+}

@@ -1,0 +1,26 @@
+{% extends "main/base_nav.html" %}
+{% load static %}
+{% block title %}BookNest{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static "home.css" %}">
+{% comment %} <link rel="stylesheet" href="{% static "browse.css" %}"> {% endcomment %}
+{% endblock link %}
+
+{% block content %}
+
+<section class="home" id="home">
+    <div class="home-content">
+        <h1>Booknest</h2><br>
+        <p>A book is a medium for recording <b>information</b> in the form of writing or images, typically composed of many pages (made of
+             papyrus, parchment, vellum, or paper) <b>bound together </b>and protected by a cover.
+        </p>
+       <br>
+       <a href="/browse" class="btn"><b>Get Started</b></a>
+    </div>
+    <div class="home-img">
+        <img src="Logo.jpg" alt="logo">
+    </div>
+</section>
+
+{% endblock content %}
