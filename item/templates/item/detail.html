@@ -14,7 +14,16 @@
         <p class="text-semibold px-3 pt-3 ">Seller: {{item.created_by}}</p>
         <p class="text-semibold px-3 py-5 ">{{item.description}}</p>
 
+        {% if request.user == item.created_by %}
+        <div class=" p-6 mt-6 bg-white rounded-xl">
+            <p>This is your item!</p>
+            <a href="/item/{{item.pk}}/delete" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl">Delete</a>
+            <a href="/item/{{item.pk}}/edit" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-green-500 text-white rounded-xl">Edit</a>
+        </div>
+        {% else %}
         <a href="#" class="mt-8 ml-3 px-6 py-3 text-lg font-semibold bg-teal-500 text-white hover:bg-teal-700 rounded-xl">Contact Seller</a>
+        {% endif %}
+
     </div>
 </div>
 {% if related_items %}

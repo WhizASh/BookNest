@@ -19,6 +19,8 @@ urlpatterns = [
     #core has basic page home , browse page , sign up 
     path('',include('core.urls')), 
     #item has item detail page and item search  logic 
-    path('item/',include('item.urls'))
+    path('item/',include('item.urls')),
+    #dashboard has logged in users info 
+    path('dashboard/',include('dashboard.urls')),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)    #added this path to allow django to serve images via media url

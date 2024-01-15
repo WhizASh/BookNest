@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+My Dashboard
+{% endblock title %}
+
+{% block content %}
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+    <h2 class="mb-12 text-2xl text-center">My Items</h2>
+    <div class="grid grid-cols-3 gap-3">
+        {% for item in item %}
+        <div>
+            <a href="/item/{{item.id}}">
+                <div>
+                    <img src="{{item.image.url}}" alt="{{item.book_name}}" height="500" widht="500" class="rounded-t-xl">
+                </div>
+                <div class="p-6 bg-white rounded-b-xl">
+                    <h2 class="text-2xl">{{item.book_name}}</h2>
+                    <p class="text-grey-500">Price: {{item.price}}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+    <h2 class="mb-12 text-2xl text-center">Categories</h2>
+    <div class="grid grid-cols-6 gap-3">
+        {% for cat in category %}
+        <div>
+            <a href="/item/{{item.id}}">
+                <div class="p-6 bg-white rounded-b-xl">
+                    <h2 class="text-2xl">{{cat.name}}</h2>
+                    <p class="text-grey-500">{{cat.items.count}} Items</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

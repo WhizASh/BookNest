@@ -1,9 +1,9 @@
-from django.shortcuts import render , HttpResponse , redirect
+from django.shortcuts import render , HttpResponse , redirect , get_object_or_404
 from .models import Items
 from django.contrib.auth.decorators import login_required
 
 #to use the premade form made by django , we gave the field we want in the this form
-from .forms import NewItemForm
+from .forms import NewItemForm,EditItemForm
 
 # Create your views here.
 def detail(request,pk):
@@ -31,3 +31,25 @@ def new(request):
         form = NewItemForm()
     return render(request,'item/form.html',{'form':form,'title':'New Item'})
 
+    
+@login_required
+def edit(request,pk):
+    item = get_object_or_404(Items,pk=pk, created_by=request.user )
+    if request.method== 'POST':
+        #passed the information to form class django will auto verify it 
+        form= EditItemForm(request.POST , request.FILES,instance=Items)
+
+        if form.is_valid():
+            item.save()
+
+            return redirect(f'/item/{item.id}' , pk=item.id)
+    else:
+        form = EditItemForm(instance=Items)
+    return render(request,'item/form.html',{'form':form,'title':'Edit Item'})
+
+@login_required
+def delete_item(request ,pk):
+    item = get_object_or_404(Items,pk=pk, created_by=request.user)
+    item.delete()
+
+    return redirect("/dashboard")
