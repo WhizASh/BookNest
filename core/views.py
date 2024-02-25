@@ -7,6 +7,11 @@ from .forms import SignUpform
 def index(request):
     items = Items.objects.filter(is_sold=False)
     category = Category.objects.all()
+    return render(request,'main/home.html',{"category":category,"item":items})
+
+def index2(request):
+    items = Items.objects.filter(is_sold=False)
+    category = Category.objects.all()
     return render(request,'core/index.html',{"category":category,"item":items})
 
 def contact(request):
@@ -25,7 +30,7 @@ def logout(request):
         logl(request)
         return render(request,'core/logout.html')
     else:
-        return redirect("/")
+        return redirect("/home")
 
 def signup(request):
     if request.method=="POST":
@@ -37,4 +42,4 @@ def signup(request):
     else:
         form = SignUpform()
 
-    return render(request,'core/signup.html',{"form":form})
+    return render(request,'main/SignUp.html',{"form":form})

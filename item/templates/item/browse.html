@@ -1,0 +1,84 @@
+{% load static %}
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+
+        <title>Booknest</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" ="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <link rel="stylesheet" href="{% static "browse.css" %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />     
+
+    </head>
+    <body>
+        <div id="preloader"></div>
+        <nav class="sticky-top">
+            <input type="checkbox" id="check" name="" value="">
+			<label for="check" id="checkbtn"><i class="fa fa-bars"></i></label>
+			<label class="logo"><a href="/home"><b>BOOKNEST</b></a></label>
+			<ul>
+				<li><a href="/home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+				<li><a href="/item/new" class="active"><i class="fa-solid fa-plus" style="font-size:14px;"></i>Add Item</a></li>
+                {% if request.user.is_authenticated %}
+				<li><a href="/dashboard"><i class="fa-solid fa-user"></i>Profile</a></li>
+                <li><a href="#"><button>Inbox</button></a></li>
+				<li><a href="/logout"><button>Logout</button></a></li>
+                {% else %}
+                <li><a href="/login"><button>Login</button></a></li>
+				<li><a href="/signup"><button>Signup</button></a></li>
+                {% endif %}
+
+			</ul>
+		</nav>
+        <section class="books" id="books">
+            <div class="row" style="width:100%;"><!--Main row-->
+                <div class="col col-sm-3" id="sidecol"><!--Main Col 1--><!--Change class is not col-->
+                    <form action="/item/browse" method="get">
+                        <i class="fa-solid fa-magnifying-glass" id="searchicon" style="color: white;"></i>
+                        <input type="text" placeholder="Search" value="{{query}}" name="query" id="search">
+                    </form>
+                    
+                    <div id="list"><!--List group div starts her-->
+                        <ul>
+                            {% comment %} <a href="#"><li><i class="fa-solid fa-folder-open"></i>All</li></a>
+                            <a href="#"><li><i class="fa-solid fa-folder-open"></i>Local</li></a> {% endcomment %}
+                            <p class="font-semibold">Clear Filter</p>
+                            <ul>
+                                <li><a href="/item/browse">Reset</a></li>
+                            </ul>
+
+                            {% for cat in categories %}
+                            <a href="/item/browse/?=query={{query}}&category={{cat.id}}"><li><i class="fa-solid fa-folder-open"></i>{{cat.name}}</li></a>
+                            {% endfor %}
+
+                             
+                        </ul>
+                    </div><!--List ends-->
+                </div><!--Col 1-->
+                <div class="col" id="col2"><!--Main Col 2-->
+                    {% if item.exists %}
+                    <div class="row"><!--Row Starts here-->
+                        {% for item in item %}
+                        <div class="col col-md-5 cardcols">
+                            <a href="/item/browse/{{item.id}}"><img src="{{item.image.url}}"></a>
+                            <a href="/item/browse/{{item.id}}" class="blabels">
+                                <p class="b_title">{{item.book_name}}</p>
+                                <p class="b_info">Price : {{item.price}}</p>
+                                <p class="b_info">Stream : {{item.category}}</p>
+                            </a>
+                        </div>
+                        {% endfor %}       
+                    </div><!--Row ends here-->
+                    {% else %}
+                    <h2>No Items Here 🤐🥹</h2>
+                    {% endif %}     
+                </div><!--Main Col 2 ends-->
+                
+            </div><!--Main row ends-->
+        </section>
+        <script src="{% static "Loading.js" %}"></script>
+    </body>
+</html>

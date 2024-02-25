@@ -1,5 +1,4 @@
-/*Navbar section CSS*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');/*Navbar section CSS*/
 *{
     margin:0;
     padding:0;
@@ -8,8 +7,7 @@
     border:none;
     outline:none;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Open Sans', sans-serif;
+    font-family:'Open Sans',sans-serif;
 }
 :root{
     --bg-color:#1f242d;
@@ -25,70 +23,57 @@ body{
     background:#1f242d;
     color:#fff;
 }
-header{
-    position:relative;/*change*/
-    top:1px;/*change*/
-    left:0;
-    margin-bottom: 25px;
-    height:80px;
-    width:100%;
-    padding: 3px 5%;/*change*/
-    padding-top: 2rem ;
-    background: #1f242d;
-    display: flex;
-    justify-content: space-between;
-    align-items: top; /*change*/
-    z-index: 100;
+nav{
+    margin-bottom: 20px;
+    background-color: #1f242d;
 }
-.logo{
-    position: relative;
-    top: 13px;
-    font-size: 2.5rem;
-    color: #fff;
-    font-weight: 400;
-    cursor: default;
+nav ul{
+	float:right;
+	list-style-type:none;
+	padding-right:80px;
 }
-
-
-.navbar a{
-    font-size: 1.8rem;
-    color: #fff;
-/*    margin: 3rem;*/
-    margin-top: .7rem; /*change*/
-    margin-bottom: 50px;
-    margin-right: 53px;
-    transition: .3s ;
+label.logo a{
     text-decoration: none;
+	font-size:2.5rem;
+	color:#fff;
+	font-weight:600;
+	margin:0 100px;
+	line-height:80px;
+	color:#fff;
 }
-.navbar a:hover{
-    color: #0ef; 
+nav ul li{
+	display:inline-block;
+	line-height:80px;
 }
-a i{
-    position: relative;
-    top:-2px;
-    margin-right: 5px;
-    padding-bottom: 1rem;
-    line-height: 0.8;
-    font-size: 12px;
+nav ul li a{
+	text-decoration:none;
+	color:#fff;
+	font-size:1.9rem;
+	padding: 8px 20px;
 }
-a #icon{
-    font-size: 15px;
-    top:-1px;
+nav ul li a i{
+	position: relative;
+	top:-2px;
+	margin-right: 5px;
+	padding-bottom: 1rem;
+	line-height: 0.8;
+	font-size: 12px;
 }
-a.signbtn{
-    position: relative;
-    top: -3px;
-    left: 20px;
-    background: #0ef;
-    border-radius: 4rem;
-    box-shadow: 0 0 1rem #0ef;
-    font-size: 1.6rem;
-    color: black;
-    padding: 7px 2rem; /*change*/
+nav ul li a button{
+	border-radius: 20px;
+	background: #0ef;
+	font-size: 1.6rem;
+	box-shadow: 0 0 1rem #0ef;
+	padding: 0rem 2rem;
+    line-height: 40px;
+	color: black;
 }
-a.signbtn:hover{
-    box-shadow: 0 0 3rem #0ef;
-    color: #1f242d;
+nav ul li a:hover, nav ul li a.active{
+	color: #0ef; 
+}
+nav ul li button:hover{
+	color: #1f242d;
+	box-shadow: 0 0 3rem #0ef;
 }
 /*Books section Css*/
 section #sidecol{
@@ -96,79 +81,222 @@ section #sidecol{
     color: #fff;
     font-size: 1.5rem;
     width:17%;
+    animation-name: fade;
+    animation-duration: 4s;
 }
-ul{
+#list{
+    width:220px;
+    background-color: #1f242d;
+    color: #fff;
+}
+section ul{
     list-style-type: none;
     margin-left: -5px;
 }
-ul li{
+section ul a li{
     display: block;
     padding:12px; 
     align-items: center;
     width: 180px;
 }
-ul li a{
+/*ul li a{
     display: inline-block;
     text-decoration: none;
     color:#fff;
     width: 160px;
+}*/
+section ul a{
+    color: #fff;
+    text-decoration: none;
 }
-ul li:hover, ul li:hover a{
+section ul li:hover{
     background-color: rgb(66, 67, 68);
     border-radius: 5px;
     color:#0ef;
 }
-i{
+section ul i{
+    margin-right: 6px;
+}
+section i{
     margin-right: 3px;
 }
-#search{
+section #search{
     color: #fff;
     border-radius: 20px;
     background-color: #3b3c3d;
     opacity: 70%;
     padding-left:32px;
+    padding-right:10px;
     width:180px;
     height:40px;
     margin-bottom: 5px;
-    margin-left:15px;
+    margin-left:0px;
 }
-#search:hover{
+section #search:hover{
     box-shadow: 0 0 2rem #fff;
 }
-.col .row .cardcols{
-    height:250px;
+section .col .row .cardcols{
+    height:300px;
     width:260px;
-    background-color: #3e3f42;
+    border-radius: 15px;
+    background-color: #323946;
     margin-right: 2rem;
     margin-bottom: 2rem;
+    animation-name: fade;
+    animation-duration: 4s;
 }
-.col .row .cardcols:hover{
+section .col .row .cardcols:hover{
     box-shadow: 0 0 2rem #fff;
 }
-img{
+section img{
     position: relative;
-    left: -8px;
+    left: -7px;
+    border-radius: 15px 15px 0px 0px;
+    padding-left: -5px;
+    height:190px;
+    width:260px;
 }
-p{
-    height:60px;
-    padding-top: 6px;
-    font-size: 1.5rem;
+section p.b_title{
+    font-size: 1.6rem;
+    font-weight: 700;
 }
-p a{
+section p.b_info{
+    font-size: 1.3rem;
+}
+section .blabels{
     color:#fff;
     display: block;
     width:250px;
+    margin-top: 3px;
+    margin-left: 3px;
     text-decoration: none;
-    line-height: 50px;
+    line-height: 28px;
 }
-p a:hover{
+section .blabels:hover{
     color: #0ef;
 }
-#searchicon{
+section #searchicon{
     position: relative;
-    right:170px;
+    left:25px;
     color: #9a9da0;
 }
-#searchicon:hover{
+section #searchicon:hover{
     color: #0ef;
+}
+#checkbtn{
+    float:right;
+    line-height: 80px;
+    margin-right: 30px;
+    font-size: 30px;
+    color:white;
+    display: none;
+}
+#check{
+    display: none;
+}
+#check:checked ~ ul{
+    left:0;
+}
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@media(min-width: 310px) and (max-width: 560px) {
+    #col2{
+        margin-left:2rem;
+    }
+    #checkbtn{
+        display:block;
+    }
+    section img{
+        width:348px;
+    }
+    nav ul{
+        width:70%;
+        height:100vh;
+        background-color: #323946;
+        position: fixed;
+        top:80px;
+        left:-100%;
+        transition: .5s;
+    }
+    nav ul li{
+        display: block;
+        text-align: center;
+    }
+    section #searchicon{
+        position: relative;
+        color: white;   
+    }
+    #list{
+        width:130px;
+    }
+    section #sidecol{
+        width:100px;
+        margin-right:0px;
+    }
+    section #search{
+        width:120px;
+    }
+    section ul a li{
+        width:130px;
+        padding-left:5px;
+    }
+    #col2{
+        margin-left: -50px;
+    }
+    section .col .row .cardcols{
+        height:230px;
+        width:110px;
+        border-radius: 15px;
+        background-color: #323946;
+        margin-right: 0.5rem;
+        margin-bottom: 2rem;
+        margin-left:0px;
+    }
+    section img{
+        position: relative;
+        left: -7px;
+        border-radius: 15px 15px 0px 0px;
+        padding-left: -5px;
+        height:110px;
+        width:110px;
+    }
+    section .blabels{
+        color:#fff;
+        display: block;
+        width:50px;
+        margin-top: 3px;
+        margin-left: 0px;
+        text-decoration: none;
+        line-height: 15px;
+    }
+    section p.b_title{
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    section p.b_info{
+        font-size: 1rem;
+    }
+    label.logo a{
+        text-decoration: none;
+        font-size:2.5rem;
+        color:#fff;
+        font-weight:600;
+        margin:0 50px;
+        line-height:80px;
+        color:#fff;
+    }
+}
+#preloader{
+    background: #000 url(Images/loading4.gif) no-repeat center center;
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
 }

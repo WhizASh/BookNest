@@ -1,0 +1,239 @@
+.navbar a.active{
+    color: #0ef; 
+}
+form{
+    height:880px;
+    width:500px;
+    background-color: #323946;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right:200px;
+    margin-bottom: 20px;
+    padding-top:20px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    animation-name: fade;
+    animation-duration: 4s;
+}
+input{
+    width:440px;
+    height:38px;
+    color: #fff;
+    padding-left: 10px;
+    border-radius: 15px;
+    background-color: #323946;
+    opacity: 100%;
+    border: 1px solid #fff;
+}
+::placeholder{
+    color: #fff;
+    opacity: 60%;
+}
+label.logo a{
+	font-size:2.5rem;
+	color:#fff;
+	font-weight:600;
+	margin:0 100px;
+	line-height:80px;
+	color:#fff;
+}
+section{
+    display: flex;
+}
+.btext{
+    margin-left:35px;
+    margin-right: 60px;
+    padding-right:15px;
+    margin-top: 50px;
+    width:550px;
+    max-width: 550px;
+}
+.btext h1{
+    font-size: 3.8rem;
+    margin-bottom: 30px; color: #0ef;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    animation-name: move;
+    animation-duration: 2s;
+}
+.btext p{
+    font-size: 2.5rem;
+    line-height: 50px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: justify;
+    animation-name: fade;
+    animation-duration: 4s;
+}
+label{
+    font-size: 1.7rem;
+    margin-left:7px;
+}
+h1{
+    margin-left:130px;
+    font-weight: 700;
+}
+#bookimg{
+    width: 250px;
+    opacity: 100%;
+    border: none;
+}
+#sel{
+    width: 200px;
+    height:35px;
+    background-color: #323946;
+    border: 1px solid #fff;
+    color:#fff;
+}
+.place{
+    width:220px;
+}
+textarea{
+    width:440px;
+    height:60px;
+    max-height:90px;
+    color: #fff;
+    padding-left: 10px;
+    border-radius: 15px;
+    background-color: #323946;
+    opacity: 100%;
+    border: 1px solid #fff;
+    resize: none;
+}
+.button{
+    width:220px;
+    font-size: 2rem;
+    color: black;
+    font-weight: 700;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#addbtn{
+    background-color: rgb(3, 250, 3);
+    box-shadow: 0 0 1rem rgb(3, 250, 3);
+    opacity:100%;
+    margin-top: 10px;
+    border: none;
+}
+#addbtn:hover{
+    box-shadow: 0 0 2rem rgb(3, 250, 3);
+}
+#canbtn{
+    background-color: red;
+    box-shadow: 0 0 1rem red;
+    opacity:100%;
+    margin-top: 10px;
+    border: none;
+}
+#canbtn:hover{
+    box-shadow: 0 0 2rem red;
+}
+#checkbtn{
+    float:right;
+    line-height: 80px;
+    margin-right: 15px;
+    margin-left: 10px;
+    font-size: 30px;
+    color:white;
+    display: none;
+}
+#check{
+    display: none;
+}
+#check:checked ~ ul{
+    left:0;
+}
+@keyframes move {
+    from{
+        left:-100%;
+    }
+    to{
+    }
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media(max-width:1080px) {
+    #checkbtn{
+        display:block;
+    }
+    nav ul{
+        width:70%;
+        height:100vh;
+        background-color: #323946;
+        position: fixed;
+        border-radius: 10px;
+        top:80px;
+        left:-100%;
+        transition: .5s;
+    }
+    nav ul li{
+        display: block;
+        text-align: center;
+    }
+    label.logo a{
+        margin:0 30px;
+    }
+    label{
+        font-size: 2rem;
+        margin-left:7px;
+    }
+    section{
+        display: block;
+    }
+    form{
+        height:1400px;
+        width:400px;
+        font-size: 2rem;
+        margin-left:5px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding-top:20px;
+        padding-left: 20px;
+    }
+    input{
+        width:350px;
+        height:45px;
+    }
+    textarea{
+        width:360px;
+        height:90px;
+    }
+    #bookimg{
+        width: 320px;
+    }
+    .place{
+        width:350px;
+        margin-bottom: 20px;
+    }
+    .button{
+        width:350px;
+        margin-bottom: 20px;
+        padding-left:-10px;
+    }
+    #sel{
+        width: 350px;
+        height: 40px;
+    }
+    h1{
+        margin-left:20px;
+        font-weight: 700;
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+}
+#preloader{
+    background: #000 url(Images/loading4.gif) no-repeat center center;
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

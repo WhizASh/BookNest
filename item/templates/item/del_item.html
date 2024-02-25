@@ -20,7 +20,7 @@
 			<label for="check" id="checkbtn"><i class="fa fa-bars"></i></label>
 			<label class="logo"><a href="/home"><b>BOOKNEST</b></a></label>
 			<ul>
-				<li><a href="/home"><i class="fa-solid fa-house"></i>Home</a></li>
+				<li><a href="/home.html"><i class="fa-solid fa-house"></i>Home</a></li>
 				<li><a href="/item/new" class="active"><i class="fa-solid fa-plus" style="font-size:14px;"></i>Add Item</a></li>
                 {% if request.user.is_authenticated %}
 				<li><a href="/dashboard"><i class="fa-solid fa-user"></i>Profile</a></li>
@@ -35,13 +35,30 @@
 		</nav>
         <section>
         <div class="btext">
-            <h1 style="position: relative; left:-130px;">Logged out from Booknest</h1>
-            {% comment %} <p>you can <b>sell your books</b>, please fill out the form given. <b>Provide your name, contact information
+            <h1 style="position: relative; left:-130px;">Welcome to Booknest</h1>
+            <p>To <b>sell your books</b>, please fill out the form given. <b>Provide your name, contact information
                 and the name and cost of the book</b>. If you have any any specific preferences or description, <b>feel free</b> to include them in the form.     
-            </p> {% endcomment %}
+            </p>
             <h1 style="position: relative; left:-50px; margin-top: 20px;">!!! Happy Reading !!!</h1>
         </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
 
+            {{form.as_p}}
+
+            {% if form.non_filed_errors or form.errors %}
+           
+                {% for field in form %}
+                {{field.errors}}
+                {% endfor %}
+        
+                {{form.non_field_errors }}
+        
+            {% endif %}
+                        
+            <input type="submit" class="button" id="addbtn" value="Add">
+            <a href="/browse"><input type="reset" class="button" id="canbtn" value="Cancel"></a>
+        </form>
         </section>
         <script src="{% static "Loading.js" %}"></script>
     </body>
